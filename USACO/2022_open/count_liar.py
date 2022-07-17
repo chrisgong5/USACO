@@ -32,19 +32,13 @@ great_p.sort()
 all_p.sort()
 min_l = n
 
-# The idea is to check all the possible positions for liars
+# The idea is to check all the possible positions for the one that produces minimum liars
 for i in range(n):
     p = all_p[i]
     liars = check_liars(great_p, less_p, p)
     if liars < min_l:
         min_l = liars
-# Also need to check the position before the first and after the last position,
-liars = check_liars(great_p, less_p, all_p[0] - 1)
-if liars < min_l:
-    min_l = liars
-liars = check_liars(great_p, less_p, all_p[n - 1] + 1)
-if liars < min_l:
-    min_l = liars
+
 print(min_l)
 
 
