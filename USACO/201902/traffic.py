@@ -27,65 +27,64 @@ for i in range(n):
     elif mark == "off":
         if low >= 0:
             low -= h
-            if low < 0:
-                low = 0
             high -= l
-            if high < 0:
-                high = 0
-    else:
+    elif mark == "none":
         if low >= 0:
             low = max(low, l)
             high = min(high, h)
         else:
             low = l
             high = h
+    else:
+        print("Error: invalid mark %s" % mark)
     measures.append([low, high])
 
-off_measure = str(low) + " " + str(high)
+end_low = low if low >= 0 else 0
+end_high = high if high >= 0 else 0
+off_measure = str(end_low) + " " + str(end_high)
 
 # Going backward to fill the entry traffic measures
 i = n - 1
-while i > 0:
+while i >= 0:
     mark = traffic[i][0]
     l = traffic[i][1]
     h = traffic[i][2]
     if mark == "on":
         low -= l
         high -= h
+        x = min(low, high)
+        y = max(low, high)
+        low = x
+        high = y
+        """
         if low < 0:
             low = 0
         if high < 0:
             high = 0
+        """
     elif mark == "off":
         low += h
         high += l
-    else:
+        x = min(low, high)
+        y = max(low, high)
+        low = x
+        high = y
+    elif mark == "none":
         low = max(low, l)
         high = min(high, h)
-    #if measures[i-1][0] > 0:
+    else:
+        print("Error: invalid mark %s" % mark)
+
+    #if measures[i-1][0] >= 0:
     #    low = max(low, measures[i-1][0])
-    #if measures[i-1][1] > 0:
     #    high = min(high, measures[i-1][1])
     i -= 1
-mark = traffic[0][0]
-l = traffic[0][1]
-h = traffic[0][2]
-if mark == "on":
-    low -= l
-    high -= h
-    if low < 0:
-        low = 0
-    if high < 0:
-        high = 0
-elif mark == "off":
-    low += h
-    high += l
-else:
-    low = max(low, l)
-    high = min(high, h)
 
-entry_measure = str(low) + " " + str(high) + "\n"
-
+entry_low = low if low >= 0 else 0
+entry_high = high if high >= 0 else 0
+if entry_low > entry_high:
+    entry_low = entry_high
+entry_measure = str(entry_low) + " " + str(entry_high) + "\n"
 out_file.write(entry_measure)
 out_file.write(off_measure)
 
