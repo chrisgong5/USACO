@@ -13,7 +13,6 @@ for i in range(n):
         relation[cow1].append(cow2)
         if cow2 in cows:
             cows.remove(cow2)
-    elif cow2 in relation:
     else:
         relation[cow1] = [cow2]
         if cow1 in cows:
