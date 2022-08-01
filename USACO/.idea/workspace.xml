@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9e4eee2-18ba-4739-8b2a-85443844cfa8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/201901/sort_sleeping.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201812/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201812/backforth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201812/mix_milk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201901/guess_animal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/201912/lineup.py" beforeDir="false" afterPath="$PROJECT_DIR$/201912/lineup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milk_bucket.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/milk_bucket_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/201812/milk_bucket.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +41,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/201812" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

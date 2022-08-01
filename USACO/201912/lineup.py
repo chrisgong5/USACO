@@ -10,11 +10,18 @@ for i in range(n):
     cow1 = r[0]
     cow2 = r[5]
     if cow1 in relation:
+        cow3 = relation[cow1]
         relation[cow1].append(cow2)
         if cow2 in cows:
             cows.remove(cow2)
+    elif cow2 in relation:
+        relation[cow2].append(cow1)
+        if cow1 in cows:
+            cows.remove(cow1)
     else:
         relation[cow1] = [cow2]
+        relation[cow2] = [cow1]
+
         if cow1 in cows:
             cows.remove(cow1)
         if cow2 in cows:
